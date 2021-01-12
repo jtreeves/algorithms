@@ -1,4 +1,4 @@
-def merge_sort(set1, set2):
+def merge(set1, set2):
     output = []
     combined_start_lengths = len(set1) + len(set2)
     while len(output) < combined_start_lengths:
@@ -16,8 +16,11 @@ def merge_sort(set1, set2):
             set2 = set2[1:]
     return output
 
-print(merge_sort([2], [4])) # => [2, 4]
-print(merge_sort([4], [2])) # => [2, 4]
+print(merge([2], [4])) # => [2, 4]
+print(merge([4], [2])) # => [2, 4]
+print(merge([4, 5, 11], [2, 9])) # => [2, 4, 5, 9, 11]
+print(merge([4, 5, 11], [2, 5, 9])) # => [2, 4, 5, 5, 9, 11]
+print(merge([4, 5, 11, 36, 37], [2, 5, 9, 11, 13])) # => [2, 4, 5, 5, 9, 11, 11, 13, 36, 37]
 
 # ALTERNATIVE WHILE LOOP
 # while len(set1) > 0 or len(set2) > 0
