@@ -2,6 +2,10 @@ def merge(set1, set2):
     output = []
     combined_start_lengths = len(set1) + len(set2)
     while len(output) < combined_start_lengths:
+        print(f'output: {output}')
+        print(f'set1: {set1}')
+        print(f'set2: {set2}')
+        print('----------')
         if len(set1) == 0:
             output += set2
             set2 = []
