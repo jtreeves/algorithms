@@ -33,10 +33,11 @@ def split(input):
     midpoint = len(input) // 2
     set1 = input[:midpoint]
     set2 = input[midpoint:]
-    # return set1, set2
     if len(set1) <= 1 and len(set2) <= 1:
-        return merge(set1, set2)
-    return split(set1) + split(set2)
+        return merge(set1, set2)    
+    split_set1 = split(set1)
+    split_set2 = split(set2)
+    return merge(split_set1, split_set2)
 
 print(split([1, 2, 3, 4]))
 print(split([1, 2, 3, 4, 5]))
