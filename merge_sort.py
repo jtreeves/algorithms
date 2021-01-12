@@ -36,8 +36,8 @@ def split(input):
     # return set1, set2
     if len(set1) <= 1 and len(set2) <= 1:
         return merge(set1, set2)
-    split(set1)
-    split(set2)
+    return split(set1) + split(set2)
 
 print(split([1, 2, 3, 4]))
 print(split([1, 2, 3, 4, 5]))
+print(split([2, 3, 1, 7, 4, 5]))
