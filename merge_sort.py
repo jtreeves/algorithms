@@ -1,13 +1,3 @@
-def split(input):
-    midpoint = len(input) // 2
-    set1 = input[:midpoint]
-    set2 = input[midpoint:]
-    # return set1, set2
-    
-
-print(split([1, 2, 3, 4]))
-print(split([1, 2, 3, 4, 5]))
-
 def merge(set1, set2):
     output = []
     combined_start_lengths = len(set1) + len(set2)
@@ -38,3 +28,16 @@ def merge(set1, set2):
 
 # ALTERNATIVE WHILE LOOP
 # while len(set1) > 0 or len(set2) > 0
+
+def split(input):
+    midpoint = len(input) // 2
+    set1 = input[:midpoint]
+    set2 = input[midpoint:]
+    # return set1, set2
+    if len(set1) <= 1 and len(set2) <= 1:
+        return merge(set1, set2)
+    split(set1)
+    split(set2)
+
+print(split([1, 2, 3, 4]))
+print(split([1, 2, 3, 4, 5]))
