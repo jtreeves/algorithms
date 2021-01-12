@@ -1,4 +1,4 @@
-def binary_search(input, target):
+def binary_search(input, target, former_index = 0):
     length = len(input)
     if length == 0:
         return -1
@@ -7,13 +7,13 @@ def binary_search(input, target):
     front = input[:mid_index]
     back = input[mid_index + 1:]
     if mid_value == target:
-        return mid_index
+        return mid_index + former_index
     elif length == 1 and mid_value != target:
         return -1
     elif mid_value > target:
-        return binary_search(front, target)
+        return binary_search(front, target, former_index)
     elif mid_value < target:
-        return binary_search(back, target)
+        return binary_search(back, target, former_index + mid_index + 1)
 
 print(binary_search([1,2,3,4], 1)) # => 0
 print(binary_search([1,2,3,4], 2)) # => 1
